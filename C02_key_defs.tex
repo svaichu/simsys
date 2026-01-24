@@ -1,0 +1,42 @@
+% C02 Basic Terms
+
+System: A system is „a set of interrelated elements that are separated from their environment”. [according to VDI3633, adapted from DIN- IEC-60050-351]
+
+System of Systems: A system of systems (SoS) brings together a set of systems for a task that none of the systems can accomplish on its own. Each constituent system keeps its own management, goals, and resources while coordinating within the SoS and adapting to meet SoS goals.
+
+Model: A Model is a "simplified reproduction of a planned or existing system with its processes in a different conceptual or physical system. In terms of the investigated properties, the model differs from the original only within a tolerance framework that depends on the examination target."[VDI3633]
+
+Conceptual Model: A Conceptual Model “is the set of concepts within a system and the relationships among those concepts (e.g., view and viewpoint).”[SEBOK]
+
+Simulation Model: A Simulation Model is a formal, simulation- specific reproduction of a planned or existing system.
+
+Simulation: Simulation is the „representation of a system with its dynamic processes in an Experimentable Model with the aim of reaching findings which are transferable to reality.” In particular, “simulation allows to examine the running behavior of complex systems over time.” [VDI3633]
+
+Simulation Tool: A Simulation tool is a „software program that can be used to create a model and make it executable with the help of a programming language in order to reproduce the dynamic behavior of a system and ist processes.”[VDI3633]
+
+Stochastic Simulation: In stochastic simulations, the influence of chance is explicitly taken into account. The variables contain, within suitably defined parameters, random numbers. These random numbers can result on the one hand from the underlying indeterminism, as for example in quantum mechanics, but on the other hand also from the (present) ignorance about the corresponding final correlations, as for example in the social sciences. This kind of simulation is often called “Monte Carlo simulation”. In this context, the Monte Carlo method refers to the computer-assisted generation of random numbers, whose sequence elements have the same distribution as is expected for the system to be investigated. In addition to the parameters, the input variables of the system can also scatter. Accordingly, random time functions, a group of possible realizations (an ensemble), are considered here. [Grams2001]
+
+Deterministic Simulation: In deterministic simulations, all the variables considered are uniquely determined and manipulated in a targeted, non- random way.
+
+Discrete Simulation: A continuous or discrete initial process is represented as a sequence of clearly defined system states. Discrete simulations are based on discrete space-time structures. Also the system states can often only assume discrete values.
+
+Continuous Simulation: Both the underlying process and its model are continuous systems. The corresponding mathematical implementation takes place with the help of differential equations. The underlying space- time structures as well as the system states are typically continuous. The numerical integration of differential equations, however, again uses discrete space-time structures. The goal, however, is to strive for the highest possible resolutions. Accordingly, the results are not based on exact solutions but are obtained by approximation. Accordingly, the term “quasi-continuous” is also used.
+
+
+Real-time simulation: The time in which the simulation takes place corresponds to the time that the simulated process would actually require. For example, a flight simulator must respond so quickly to an input that the user will not notice any time delay.
+
+Domain-independent methods: The approach to cross-domain modelling is the description of the overall system with an abstract modeling language. These languages can then be equation-based, agent-based, graphical or object-oriented. Such a model is automatically prepared and simulated by a simulator.
+
+Specific methods for single domains: Domain-specific simulation methods are usually implemented concretely for a specific physical process and are often more powerful or easier to apply in this domain than domain-spanning modelling and simulation systems.
+
+Finite Element Method (FEM): FEM is a numerical method for solving partial differential equations (PDEs). In addition to time, space is also discretized, i.e. divided into a mesh of finitely small elements. The result is a usually very large equation system (dependent on the number of elements, linear for linear PDEs), which is solved directly or iteratively.
+
+Equation-based simulation describes systems and processes using differential algebraic equations (DAE), i.e. systems of ordinary differential equations and algebraic equations.
+
+Signal-oriented Simulation: Signal-oriented simulation describes systems and processes on the basis of functional diagrams (also called block diagrams). A functional diagram is the “symbolic representation of the actions in a system by functional blocks, summing points and branching points linked by action lines” [DIN-IEC-60050-351].
+
+Physical oo simulation: Physical object-oriented simulation (also called network modelling) describes systems by elements (also called nodes) that are interconnected by connections. Physical relationships are formulated by expressions of potential and flow quantities. See also [ITI2009]
+
+DES: In Discrete-Event Simulation (DES), all events that occur during the course of a discrete process are replayed. For each event, an event routine is executed that depends on the event type. [Hedtstuck2013]
+
+Systems Engineering (SE) is an interdisciplinary approach and means to enable the realization of successful systems. It focuses on holistically and concurrently understanding stakeholder needs; exploring opportunities; documenting requirements; and synthesizing, verifying, validating, and evolving solutions while considering the complete problem, from system concept exploration through system disposal.[SeBOK v1.9.1]
