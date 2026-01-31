@@ -1,23 +1,27 @@
-\documentclass[12pt]{report}
+\documentclass[a4paper]{article}
 \usepackage[T1]{fontenc} % Use T1 encoding to support special characters
 \usepackage[margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{hyperref}
 
-\title{Project Report}
-\author{Your Name}
+\renewcommand{\thesection}{\Roman{section}}
+
+\title{Simulation Systems}
+\author{Vaishnava Hari}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
-% \newpage
-\section{Key Definitions}
+\section{Basic Terms}
 \input{C02_key_defs.tex}
-% \end{section}
+
+\section{Digital Twin}
 \input{C03_key_defs.tex}
+
+\section{Model-based}
 \input{C04_key_defs.tex}
 
 \end{document}
