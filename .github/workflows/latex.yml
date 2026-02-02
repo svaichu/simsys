@@ -10,6 +10,8 @@ on:
       - ".github/workflows/latex.yml"
     tags:
       - "v*"
+    branches:
+      - main
   pull_request:
   release:
     types: [created]
@@ -31,4 +33,13 @@ jobs:
         if: github.event_name == 'release' || startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
+          files: main.pdf
+
+      - name: Update latest release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest
+          make_latest: true
           files: main.pdf
