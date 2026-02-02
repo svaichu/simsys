@@ -35,11 +35,17 @@ jobs:
         with:
           files: main.pdf
 
+      - name: Get latest release tag
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        id: get_release
+        run: echo "tag=$(gh release list --limit 1 --json tagName --jq '.[0].tagName')" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
+
       - name: Update latest release
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: latest
-          name: Latest
-          make_latest: true
+          tag_name: ${{ steps.get_release.outputs.tag }}
           files: main.pdf
+          overwrite: true
