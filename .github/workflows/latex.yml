@@ -1,0 +1,32 @@
+name: Build LaTeX PDF
+
+on:
+  push:
+    paths:
+      - "**/*.tex"
+      - "**/*.bib"
+      - "**/*.sty"
+      - "**/*.cls"
+      - ".github/workflows/latex.yml"
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          # If you need biber:
+          # latexmk_use_lualatex: true
+          # args: -pdf -interaction=nonstopmode -file-line-error
+          # latexmk_shell_escape: true   # only if you really need it
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf
+          path: main.pdf
