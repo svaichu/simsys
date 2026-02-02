@@ -29,11 +29,14 @@ jobs:
         with:
           root_file: main.tex
 
+      - name: Rename PDF
+        run: mv main.pdf simsys.pdf
+
       - name: Upload PDF to release
         if: github.event_name == 'release' || startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          files: main.pdf
+          files: simsys.pdf
 
       - name: Get latest release tag
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -47,5 +50,5 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.get_release.outputs.tag }}
-          files: main.pdf
+          files: simsys.pdf
           overwrite: true
