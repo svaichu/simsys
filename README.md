@@ -1,0 +1,1 @@
+[![Build LaTeX PDF](https://github.com/svaichu/simsys/actions/workflows/latex.yml/badge.svg)](https://github.com/svaichu/simsys/actions/workflows/latex.yml)
